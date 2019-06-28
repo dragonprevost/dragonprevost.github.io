@@ -1,9 +1,20 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+
+export const GatsbyQuery = graphql`
+  {
+    rickAndMorty {
+      character(id: 1) {
+        name
+        image
+      }
+    }
+  }
+`
 
 const IndexPage = () => (
   <Layout>
